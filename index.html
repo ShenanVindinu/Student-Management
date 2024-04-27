@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="S Login">
+    <meta name="keywords" content="shenan vindinu Pos System s">
+    <meta name="author" content="Shenan Vindinu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="asset/lib/jquery-3.7.1.min.js"></script>
+
+</head>
+
+<style>
+
+    .HeadingMain {
+        font-family: "Outfit Light",sans-serif;
+        font-size: 2rem;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .Main {
+        display: flex;
+        margin-top: 50px;
+        margin-left: 5vw;
+
+    }
+
+    .nameSection {
+        width: 50vw;
+    }
+
+    .gridSection {
+        width: 40vw;
+    }
+
+    .RadioSection {
+        margin-left: 80px;
+        margin-top: 10px;
+        margin-bottom: 100px;
+    }
+
+    .ButtonGroup {
+        margin-top: 25px;
+    }
+
+    body {
+        margin: 0;
+    }
+
+
+</style>
+
+<body>
+
+
+
+<header>
+    <nav class="navbar navbar-expand-lg" >
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">IJSE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <span class="nav-link" aria-current="page" >Home</span>
+                    </li>
+                    <li class="nav-item">
+                        <span id="studentMgt" class="nav-link">Student Mgt</span>
+                    </li>
+                    <li class="nav-item">
+                        <span id="CourseMgt" class="nav-link">Course Mgt</span>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link">registration</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Others
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li id="SignupButtonH" class="nav-item">
+                        <a id="SignupButton" class="nav-link active" aria-current="page" href="#">
+                            <i class="fa-solid fa-user-plus"></i>
+                            SignUp
+                        </a>
+                    </li>
+                    <li id="LogoutButtonH" class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">
+                            <i class="fa-solid fa-right-to-bracket" style="color: white"></i>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!--Student Management-->
+<section id="StudentMgtSection">
+    <section>
+        <div class="HeadingMain">Student Management</div>
+    </section>
+
+    <section class="Main">
+
+        <section class="nameSection">
+
+
+            <div class="card w-75 mb-3">
+                <div class="card-body">
+
+                    <div class="mb-3">
+                        <label for="ID" class="form-label">ID</label>
+                        <input type="email" class="form-control" id="ID">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="email" class="form-control" id="firstName">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="email" class="form-control" id="lastName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Address" class="form-label">Address</label>
+                        <textarea class="form-control" id="Address" rows="3" placeholder="Enter Your Address"></textarea>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+
+        <section class="gridSection">
+            <table class="table" id="studentTable">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Program</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>GDSE</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </section>
+
+    <section class="RadioSection">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" value="GDSE" id="GDSERadio">
+            <label class="form-check-label" for="GDSERadio">
+                GDSE
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" value="DEP" id="DEPRadio" checked>
+            <label class="form-check-label" for="DEPRadio">
+                DEP
+            </label>
+        </div>
+
+        <div class="ButtonGroup">
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                <button type="button" id="studentSubmit" class="btn btn-success">Submit</button>
+                <button type="button" class="btn btn-warning">Update</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-warning">Reset</button>
+            </div>
+        </div>
+
+    </section>
+</section>
+
+<!--Course Management-->
+<section id="CourseMgtSection">
+    <section>
+        <div class="HeadingMain">Course Management</div>
+    </section>
+
+    <section class="Main">
+
+        <section class="nameSection">
+
+
+            <div class="card w-75 mb-3">
+                <div class="card-body">
+
+                    <div class="mb-3">
+                        <label for="CID" class="form-label">ID</label>
+                        <input type="email" class="form-control" id="CID">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="CourseName" class="form-label">Course Name</label>
+                        <input type="email" class="form-control" id="CourseName">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Description" class="form-label">Description</label>
+                        <textarea class="form-control" id="Description" rows="3" placeholder="Enter Your Description"></textarea>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+
+        <section class="gridSection">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Course Name</th>
+                    <th scope="col">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </section>
+
+    <section class="RadioSection">
+
+        <div class="ButtonGroup">
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                <button type="button" class="btn btn-success">Submit</button>
+                <button type="button" class="btn btn-warning">Update</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-warning">Reset</button>
+            </div>
+        </div>
+
+    </section>
+</section>
+
+
+<script src="asset/lib/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script>
+
+    $("#CourseMgtSection").css({display: 'none'});
+
+    $("#studentMgt").eq(0).on('click', () => {
+        $("#StudentMgtSection").css({display: 'block'});
+        $("#CourseMgtSection").css({display: 'none'});
+    });
+
+    $("#CourseMgt").eq(0).on('click', () => {
+        $("#CourseMgtSection").css({display: 'block'});
+        $("#StudentMgtSection").css({display: 'none'});
+    });
+
+
+
+
+
+    $("#studentSubmit").eq(0).on('click', () => {
+
+        var studentID = $("#ID").val();
+        var FirstName = $("#firstName").val();
+        var LastName = $("#lastName").val();
+        var Address = $("#Address").val();
+        var Program = $('input[name="flexRadioDefault"]:checked').val();
+
+        console.log(studentID,FirstName,LastName,Address,Program);
+
+        var record = `<tr>
+            <td class="student-ID">${studentID}</td>
+            <td class="first-Name">${FirstName}</td>
+            <td class="last-Name">${LastName}</td>
+            <td class="student-address">${Address}</td>
+            <td class="student-program">${Program}</td>
+        </tr>`;
+
+        $('#studentTable').append(record);
+
+    });
+
+    // this way doesn't work'
+    // $("#studentTable").eq(0).on('click', 'tr',() => {
+    //     let index = $(this).index();
+    //     let value = $(this).find(".student-id-value").text();
+    //     let firstname = $(this).find
+    // });
+
+    $("#studentTable").eq(0).on('click', 'tr', function() {
+        let index = $(this).index();
+        let id = $(this).find(".student-ID").text();
+        let firstname = $(this).find(".first-Name").text();
+        let lastName = $(this).find(".last-Name").text();
+        let Address = $(this).find(".student-address").text();
+        let program = $(this).find(".student-program").text();
+
+        $('#ID').val(id);
+        $('#firstName').val(firstname);
+        $('#lastName').val(lastName);
+        $('#Address').val(Address);
+        $(`input[name="flexRadioDefault"][value=${program}]`).prop('checked', true);
+
+    });
+
+
+
+</script>
+
+</body>
+</html>
