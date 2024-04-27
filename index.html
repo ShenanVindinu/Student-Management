@@ -162,7 +162,7 @@
                     <th scope="col">Program</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="Student-table-tBody">
                 <tr>
                     <th scope="row">1</th>
                     <td>Mark</td>
@@ -276,72 +276,7 @@
 <script src="asset/lib/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-<script>
-
-    $("#CourseMgtSection").css({display: 'none'});
-
-    $("#studentMgt").eq(0).on('click', () => {
-        $("#StudentMgtSection").css({display: 'block'});
-        $("#CourseMgtSection").css({display: 'none'});
-    });
-
-    $("#CourseMgt").eq(0).on('click', () => {
-        $("#CourseMgtSection").css({display: 'block'});
-        $("#StudentMgtSection").css({display: 'none'});
-    });
-
-
-
-
-
-    $("#studentSubmit").eq(0).on('click', () => {
-
-        var studentID = $("#ID").val();
-        var FirstName = $("#firstName").val();
-        var LastName = $("#lastName").val();
-        var Address = $("#Address").val();
-        var Program = $('input[name="flexRadioDefault"]:checked').val();
-
-        console.log(studentID,FirstName,LastName,Address,Program);
-
-        var record = `<tr>
-            <td class="student-ID">${studentID}</td>
-            <td class="first-Name">${FirstName}</td>
-            <td class="last-Name">${LastName}</td>
-            <td class="student-address">${Address}</td>
-            <td class="student-program">${Program}</td>
-        </tr>`;
-
-        $('#studentTable').append(record);
-
-    });
-
-    // this way doesn't work'
-    // $("#studentTable").eq(0).on('click', 'tr',() => {
-    //     let index = $(this).index();
-    //     let value = $(this).find(".student-id-value").text();
-    //     let firstname = $(this).find
-    // });
-
-    $("#studentTable").eq(0).on('click', 'tr', function() {
-        let index = $(this).index();
-        let id = $(this).find(".student-ID").text();
-        let firstname = $(this).find(".first-Name").text();
-        let lastName = $(this).find(".last-Name").text();
-        let Address = $(this).find(".student-address").text();
-        let program = $(this).find(".student-program").text();
-
-        $('#ID').val(id);
-        $('#firstName').val(firstname);
-        $('#lastName').val(lastName);
-        $('#Address').val(Address);
-        $(`input[name="flexRadioDefault"][value=${program}]`).prop('checked', true);
-
-    });
-
-
-
-</script>
+<script src="asset/js/student.js"></script>
 
 </body>
 </html>
